@@ -2,6 +2,9 @@
 #include <QSqlQuery>
 #include <QVariant>
 
+#include "Application.h"
+#include "Databasemanager.h"
+
 #include "ApplicationDao.h"
 
 
@@ -31,7 +34,7 @@ unique_ptr<vector<unique_ptr<Application>>> ApplicationDAO::getApplications() co
     query.exec();
     unique_ptr<vector<unique_ptr<Application>>> list(new vector<unique_ptr<Application>>());
     while (query.next()) {
-        Application* app=new Application();
+        unique_ptr<Application> app(new Application());
         app->setId(query.value("id").toInt());
         app->setName(query.value("name").toString());
         list->push_back(move(app));

@@ -1,6 +1,11 @@
 #include "PictureDao.h"
+
+#include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QVariant>
+
+#include "Picture.h"
+#include "Databasemanager.h"
 
 
 PictureDAO::PictureDAO(QSqlDatabase& database):
@@ -43,7 +48,7 @@ void PictureDAO::removePictureFromApplication(int applicationId) const{
     bool success=query.exec();
 }
 
-unique_ptr<vector<unique_ptr<<Picture> PictureDAO::getPicturesFromApplication(int applicationId) const{
+unique_ptr<vector<unique_ptr<Picture>>> PictureDAO::getPicturesFromApplication(int applicationId) const{
     QSqlQuery query(database);
     query.prepare("SELECT * FROM pictures WHERE applicationId = (:applicationId)");
     query.bindValue(":applicationId", applicationId);

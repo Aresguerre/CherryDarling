@@ -5,22 +5,22 @@ Picture::Picture(const QString& filePath):
 {}
 Picture::Picture(const QUrl &fileUrl ):
     id(-1),
-    appId(-1),
+    applicationId(-1),
     fileUrl(fileUrl)
 {}
 
-int Picture::getId(){
+int Picture::getId() const {
     return id;
 }
 void Picture::setId(int id){
     this->id=id;
 }
 
-int Picture::getAppId(){
-    return appId;
+int Picture::getApplicationId() const{
+    return applicationId;
 }
-void Picture::setId(int appId){
-    this->appId=appId;
+void Picture::setApplicationId(int applicationId){
+    this->applicationId=applicationId;
 }
 
 QUrl Picture::getFileUrl() const

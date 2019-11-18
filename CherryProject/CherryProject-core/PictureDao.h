@@ -18,7 +18,7 @@ public:
     void addPictureToApplication(int applicationId, Picture& picture) const;
     void removePicture(int id) const;
     void removePictureFromApplication(int applicationId) const;
-    unique_ptr<vector<unique_ptr<<Picture> getPicturesFromApplication(int applicationId) const;
+    unique_ptr<vector<unique_ptr<Picture>>> getPicturesFromApplication(int applicationId) const;
 
 private:
     QSqlDatabase& database;
