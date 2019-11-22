@@ -29,7 +29,8 @@ SOURCES += \
     Databasemanager.cpp \
     ApplicationDao.cpp \
     PictureDao.cpp \
-    ApplicationModel.cpp
+    ApplicationModel.cpp \
+    PictureModel.cpp
 
 HEADERS += \
     cherryproject-core_global.h \
@@ -38,7 +39,8 @@ HEADERS += \
     Databasemanager.h \
     ApplicationDao.h \
     PictureDao.h \
-    ApplicationModel.h
+    ApplicationModel.h \
+    PictureModel.h
 
 unix {
     target.path = /usr/lib
